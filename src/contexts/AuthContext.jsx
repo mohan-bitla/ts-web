@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
           setUser(response.data);
         } catch (error) {
           console.error('Auth verification failed:', error);
-          localStorage.removeItem('token');
+          // localStorage.removeItem('token');
         }
       }
       setLoading(false);
