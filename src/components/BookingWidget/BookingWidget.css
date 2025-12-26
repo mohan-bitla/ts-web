@@ -1,0 +1,127 @@
+.booking-widget-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.booking-widget {
+  display: flex;
+  align-items: flex-end;
+  background-color: #f4f7f9;
+  padding: 10px 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 770px;
+  width: 100%;
+  gap: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.input-label {
+  font-size: 14px;
+  color: #a52a2a;
+  font-weight: 700;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.icon-red {
+  color: #a52a2a;
+}
+
+.radio-label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Ant Design Overrides */
+.ant-select-custom,
+.ant-picker-custom {
+  width: 100%;
+}
+
+.ant-select-selector,
+.ant-picker {
+  border-radius: 2px !important;
+  border-color: #ccc !important;
+}
+
+.ant-select-focused .ant-select-selector,
+.ant-picker-focused {
+  border-color: #007bff !important;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2) !important;
+}
+
+.swap-container {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 8px;
+  cursor: pointer;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.swap-icon {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+.search-group {
+  display: flex;
+  align-items: flex-end;
+}
+
+.search-button {
+  background-color: #fff !important;
+  border: 1px solid #008080 !important;
+  border-radius: 4px !important;
+  width: 40px !important;
+  height: 32px !important;
+  /* Match AntD input height */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #008080 !important;
+  box-shadow: none !important;
+}
+
+.search-button:hover {
+  background-color: #e0f7fa !important;
+  color: #006060 !important;
+  border-color: #006060 !important;
+}
+
+/* Specific widths adjustments */
+.origin-group,
+.destination-group {
+  flex: 2;
+}
+
+.date-group {
+  flex: 1.5;
+}
+
+.code-group {
+  flex: 1.5;
+}
+
+/* Adjust Radio button styles to match design */
+.ant-radio-wrapper {
+  margin-right: 0;
+  font-size: 14px;
+  color: #555;
+}

@@ -7,6 +7,8 @@ import PublicLayout from './layouts/PublicLayout';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import ServicesList from './pages/Services/ServicesList';
+import BookingWidget from './components/BookingWidget/BookingWidget';
+import Bookings from './pages/Bookings';
 
 // Protected Route Wrapper
 const ProtectedRoute = ({ children }) => {
@@ -45,12 +47,13 @@ const App = () => {
           {/* Public Routes */}
           <Route element={<PublicLayout />}>
             <Route path="/login" element={<Login />} />
+            <Route path="/test-widget" element={<div style={{ padding: '50px' }}><BookingWidget /></div>} />
           </Route>
 
           {/* Protected Routes */}
           <Route element={<ProtectedRoute><MainLayout /></ProtectedRoute>}>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/bookings" element={<PlaceholderPage title="Bookings" />} />
+            <Route path="/bookings" element={<Bookings />} />
             <Route path="/services" element={<ServicesList />} />
             <Route path="/charters" element={<PlaceholderPage title="Charters" />} />
             <Route path="/accounts" element={<PlaceholderPage title="Accounts" />} />

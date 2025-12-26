@@ -21,7 +21,7 @@ import { useAuth } from '../contexts/AuthContext';
 const { Header, Sider, Content } = Layout;
 
 const MainLayout = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -135,10 +135,10 @@ const MainLayout = () => {
             </Dropdown>
           </div>
         </Header>
-        <Content style={{ margin: '16px' }}>
+        <Content>
           <div
             style={{
-              padding: 24,
+              padding: 12,
               minHeight: 360,
               background: colorBgContainer,
               borderRadius: borderRadiusLG,
