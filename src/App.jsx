@@ -7,7 +7,6 @@ import PublicLayout from './layouts/PublicLayout';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import ServicesList from './pages/Services/ServicesList';
-import BookingWidget from './components/BookingWidget/BookingWidget';
 import Bookings from './pages/Bookings';
 
 // Protected Route Wrapper
@@ -47,7 +46,6 @@ const App = () => {
           {/* Public Routes */}
           <Route element={<PublicLayout />}>
             <Route path="/login" element={<Login />} />
-            <Route path="/test-widget" element={<div style={{ padding: '50px' }}><BookingWidget /></div>} />
           </Route>
 
           {/* Protected Routes */}

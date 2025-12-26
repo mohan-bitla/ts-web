@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
         try {
           // Verify token and get user details
           // Adjust endpoint as per your NestJS backend
-          const response = await client.get('/auth/profile'); 
+          const response = await client.get('/auth/permissions'); 
           setUser(response.data);
         } catch (error) {
           console.error('Auth verification failed:', error);
@@ -37,9 +37,9 @@ export const AuthProvider = ({ children }) => {
       if (user) {
         setUser(user);
       } else {
-        // Optional: fetch profile immediately after login if not provided
-        const profileRes = await client.get('/auth/profile');
-        setUser(profileRes.data);
+        // Optional: fetch permissions immediately after login if not provided
+        const permissionsRes = await client.get('/auth/permissions');
+        setUser(permissionsRes.data);
       }
       return true;
     } catch (error) {

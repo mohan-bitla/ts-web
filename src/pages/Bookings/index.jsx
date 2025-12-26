@@ -1,24 +1,8 @@
-import { useEffect, useState } from "react";
-import { loadCities } from "../../api/bookings";
-import BookingWidget from "../../components/BookingWidget/BookingWidget";
+import BookingEngineV1 from "../../components/bookingEngineV1";
 
 const Bookings = () => {
-
-  const [cities, setCities] = useState([]);
-
-  const getCities = async () => {
-    const cities = await loadCities();
-    setCities(cities);
-  };
-
-  useEffect(() => {
-    getCities();
-  }, []);
-
   return (
-    <div>
-      <BookingWidget cities={cities}/>
-    </div>
+    <BookingEngineV1 />
   );
 };
 
