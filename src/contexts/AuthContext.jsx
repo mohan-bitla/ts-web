@@ -5,6 +5,7 @@ const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [permissions, setPermissions] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -15,7 +16,7 @@ export const AuthProvider = ({ children }) => {
           // Verify token and get user details
           // Adjust endpoint as per your NestJS backend
           const response = await client.get('/auth/permissions'); 
-          setUser(response.data);
+          setPermissions(response.data);
         } catch (error) {
           console.error('Auth verification failed:', error);
           // localStorage.removeItem('token');
@@ -39,7 +40,7 @@ export const AuthProvider = ({ children }) => {
       } else {
         // Optional: fetch permissions immediately after login if not provided
         const permissionsRes = await client.get('/auth/permissions');
-        setUser(permissionsRes.data);
+        setPermissions(permissionsRes.data);
       }
       return true;
     } catch (error) {
@@ -55,7 +56,15 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading }}>
+    <AuthContext.Provider
+      value={{ 
+        user,
+        login,
+        logout,
+        loading,
+        permissions
+      }}
+    >
       {!loading && children}
     </AuthContext.Provider>
   );

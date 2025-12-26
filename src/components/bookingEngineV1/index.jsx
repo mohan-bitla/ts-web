@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { loadCities } from "../../api/bookings";
 import BookingWidget from "./BookingWidget/BookingWidget";
 
-const Bookings = () => {
+const BookingEngineV1 = () => {
 
   const [cities, setCities] = useState([]);
 
@@ -22,4 +22,4 @@ const Bookings = () => {
   );
 };
 
-export default Bookings;
+export default BookingEngineV1;
