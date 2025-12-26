@@ -8,6 +8,7 @@ const { Option } = Select;
 
 const BookingWidget = ({
   cities,
+  routes,
 }) => {
   const [origin, setOrigin] = useState(null);
   const [destination, setDestination] = useState(null);
@@ -49,6 +50,13 @@ const BookingWidget = ({
       label: city.cityName,
     }));
   }, [cities, origin]);
+
+  const routeOptions = useMemo(() => {
+    return routes.map((route) => ({
+      value: route.routeId,
+      label: route.routeName,
+    }));
+  }, [routes]);
 
   return (
     <div className="booking-widget-container">
@@ -151,7 +159,11 @@ const BookingWidget = ({
             value={code}
             onChange={setCode}
           >
-            <Option value="PROMO1">PROMO1</Option>
+            {routeOptions.map((option) => (
+              <Option key={option.value} value={option.value}>
+                {option.label}
+              </Option>
+            ))}
           </Select>
         </div>
 
